@@ -4,9 +4,9 @@ new Vue({
         theme: './img/1.jpg',
         arr: [
             {
-                imgUrl: './img/tmall.png',
-                title: '韩都衣舍...',
-                shop: '韩都衣舍旗舰店',
+                imgUrl: './img/QQ图片20191128131953.jpg',
+                title: '猫人莫代尔黑科技保暖内衣男女薄款本命年红结婚无痕秋衣秋裤套装',
+                shop: '猫人服饰旗舰店',
                 share: '分享赚3.68元',
                 price: 88,
                 sell: 8901,
@@ -27,6 +27,14 @@ new Vue({
                 price: 88,
                 sell: 8901,
             },
+            {
+                imgUrl: './img/tmall.png',
+                title: '韩都衣舍...',
+                shop: '韩都衣舍旗舰店',
+                share: '分享赚3.68元',
+                price: 88,
+                sell: 8901,
+            }, 
         ]
     }
 })
