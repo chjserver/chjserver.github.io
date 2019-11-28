@@ -1,114 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>商城</title>
-    <script src="./js/vue.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css"
-    />
-    <link href="./img/tmall.png" rel="SHORTCUT ICON">
-    <script src="https://cdn.jsdelivr.net/npm/vant@2.2/lib/vant.min.js"></script>
-    <style>
-      *{
-        margin: 0;
-        padding: 0;
-      }
-      #app {
-        overflow: hidden;
-      }
-      #app .grid {
-        width: calc( 50% - 10px);
-        float: left;
-        border-radius: 8px;
-        margin: 0 5px;
-        box-shadow: .3px .5px 3px #dfdddd;
-        margin-bottom: 12px;
-      }
-      #app .grid .wen {
-          margin-left: 10px;
-      }
-      #app .grid .wen .title{
-          font-size: 20px;
-          line-height: 30px;
-      }
-      #app .grid .wen .share{
-        width: 69%;
-        border: 1px solid red;
-        border-radius: 8px;
-        text-align: center;
-        color: red;
-        line-height: 20px;
-      }
-      #app .grid .wen .shop{
-        line-height: 40px;
-        font-size: 14px;
-         color: rgb(151, 150, 150);
-      }
-      #app .grid .wen .shop b {
-          width: 20px;
-          margin-right: 3px;
-          height: 20px;
-          display: inline-block;
-          background-image: url(./img/tmall.png);
-          background-size: cover;
-      }
-      #app .grid .wen .price{
-        font-size: 22px;
-        line-height: 40px;
-        color: red;
-      }
-      #app .grid .wen .sell{
-        overflow: hidden;
-        margin-bottom: 10px;
-      }
-      #app .grid .wen .sell .left{
-        color: rgb(216, 216, 216);
-        float: left;
-      }
-      #app .grid .wen .sell .right{
-        float: right;
-        margin-right: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="app">
-        <div class="theme">
-          <img :src="theme" alt="" width="100%">
-        </div>
-        <div class="grid" v-for="item in arr">
-            <div class="tu">
-                <a :href="'http://www.baidu.com'">
-                  <img :src="item.imgUrl" alt=""  width="100%" >
-                </a>
-            </div>
-            <div class="wen">
-                <div class="title">{{item.title}}</div>
-                <div class="shop">
-                    <b></b>
-                    {{item.shop}}
-                </div>
-                <p class="share">
-                  {{item.share}}
-                </p>
-                <p class="price">
-                  ￥{{item.price}}
-                </p>
-                <div class="sell">
-                  <p class="left">
-                    已售{{item.sell}}件
-                  </p>
-                  <p class="right">
-                      <van-icon name="share" />
-                  </p>
-                </div>
-            </div>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>商城</title>
+  <script src="./js/vue.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css" />
+  <link href="./img/tmall.png" rel="SHORTCUT ICON">
+  <script src="https://cdn.jsdelivr.net/npm/vant@2.2/lib/vant.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #app {
+      overflow: hidden;
+    }
+
+    #app .grid {
+      width: calc(50% - 10px);
+      float: left;
+      border-radius: 8px;
+      margin: 0 5px;
+      box-shadow: .3px .5px 3px #dfdddd;
+      margin-bottom: 12px;
+      height: auto;
+    }
+
+    #app .grid .wen {
+      margin-left: 10px;
+    }
+
+    #app .grid .wen .title {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    #app .grid .wen .share {
+      width: 69%;
+      border: 1px solid red;
+      border-radius: 8px;
+      text-align: center;
+      color: red;
+      line-height: 20px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #app .grid .wen .shop {
+      line-height: 40px;
+      font-size: 14px;
+      color: rgb(151, 150, 150);
+    }
+
+    #app .grid .wen .shop b {
+      width: 20px;
+      margin-right: 3px;
+      height: 20px;
+      display: inline-block;
+      background-image: url(./img/tmall.png);
+      background-size: cover;
+    }
+
+    #app .grid .wen .price {
+      font-size: 22px;
+      line-height: 40px;
+      color: red;
+    }
+
+    #app .grid .wen .sell {
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    #app .grid .wen .sell .left {
+      color: rgb(216, 216, 216);
+      float: left;
+    }
+
+    #app .grid .wen .sell .right {
+      float: right;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="theme">
+      <img :src="theme" alt="" width="100%">
     </div>
-  </body>
+    <div class="flex">
+      <div class="grid" v-for="item in arr">
+        <div class="tu">
+          <a :href="'http://www.baidu.com'">
+            <img :src="item.imgUrl" alt="" width="100%">
+          </a>
+        </div>
+        <div class="wen">
+          <div class="title">{{item.title}}</div>
+          <div class="shop">
+            <b></b>
+            {{item.shop}}
+          </div>
+          <p class="share">
+            {{item.share}}
+          </p>
+          <p class="price">
+            ￥{{item.price}}
+          </p>
+          <div class="sell">
+            <p class="left">
+              已售{{item.sell}}件
+            </p>
+            <p class="right">
+              <van-icon name="share" />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
 <script src="app.js"></script>
