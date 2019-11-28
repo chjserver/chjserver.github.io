@@ -4,7 +4,7 @@ new Vue({
         theme: './img/1.jpg',
         arr: [
             {
-                imgUrl: './img/QQ图片20191128131953.jpg',
+                imgUrl: './img/2.jpg',
                 title: '猫人莫代尔黑科技保暖内衣男女薄款本命年红结婚无痕秋衣秋裤套装',
                 shop: '猫人服饰旗舰店',
                 share: '分享赚3.68元',
