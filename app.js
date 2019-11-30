@@ -27,14 +27,7 @@ new Vue({
                 price: 88,
                 sell: 1273218,
             },
-            {
-                imgUrl: './img/tmall.png',
-                title: '韩都衣舍...',
-                shop: '韩都衣舍旗舰店',
-                share: '分享赚3.68元',
-                price: 88,
-                sell: 2189321,
-            }, 
+           
         ]
     }
 })
